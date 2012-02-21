@@ -18,5 +18,5 @@ And initialise it in your `.vimrc`:
 
 To update:
 
-    cd ~/.vim/bundle/pogoscript
+    cd ~/.vim/bundle/vim-pogoscript
     git pull
