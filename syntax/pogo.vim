@@ -4,19 +4,21 @@ endif
 
 syntax keyword pogoKeyword throw return
 syntax match pogoVariable /@\i\+/
+syntax match pogoNumber /[0-9]\+\(\.[0-9]\+\)\?/
 syntax match pogoParameter /#\i\+/
 syntax match pogoOperator /\(\s\|\i\|^\)\@<=[=.:#]\(\s\|\i\|$\)\@=/
 syntax match pogoOperator /[[]{}]/
 syntax match pogoString /'\([^']*''\)*[^']*'/
 syntax match pogoComment /\/\/.*$/
 
-syntax region pogoInterpolation start="@(" end=")" contained contains=ALL
+syntax region pogoInterpolation start="@(" end=")" contained contains=TOP
 
 syntax region pogoComment start="/\*" end="\*/"
 syntax region pogoString start="\"" end="\"" contains=pogoVariable,pogoInterpolation
 
 highlight link pogoVariable Identifier
 highlight link pogoParameter Type
+highlight link pogoNumber Number
 highlight link pogoOperator Operator
 highlight link pogoString String
 highlight link pogoKeyword Keyword
