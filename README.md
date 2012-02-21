@@ -14,7 +14,7 @@ And initialise it in your `.vimrc`:
 ## Install Vim PogoScript
 
     cd ~/.vim/bundle
-    git clone https://github.com/featurist/vim-pogoscript.git pogosript
+    git clone https://github.com/featurist/vim-pogoscript.git pogoscript
 
 To update:
 
