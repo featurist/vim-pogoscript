@@ -13,8 +13,7 @@ And initialise it in your `.vimrc`:
 
 ## Install Vim PogoScript
 
-    cd ~/.vim/bundle
-    git clone https://github.com/featurist/vim-pogoscript.git
+    git clone https://github.com/featurist/vim-pogoscript.git ~/.vim/bundle
 
 To update:
 
