@@ -6,7 +6,7 @@ syntax match pogoNumber /[0-9]\+\(\.[0-9]\+\)\?/
 syntax match pogoOperator /\(\s\|\i\|^\)\@<=[=.:#]\(\s\|\i\|$\)\@=/
 syntax match pogoBracket /@(\|@{\|#(\|[\[\](){}]/
 syntax match pogoComment /\/\/.*$/
-syntax match pogoKeyword /\([a-zA-Z$_]\s\+\)\@<!\<\(return\|self\|throw\|try\|catch\|finally\|if\|else\|while\|for\|new\|true\|false\)\>\(\s\+[a-zA-Z$_]\)\@!/
+syntax match pogoKeyword /\([a-zA-Z$_]\s\+\)\@<!\<\(return\|self\|throw\|try\|catch\|finally\|if\|else\|while\|for\|new\|true\|false\|debugger\)\>\(\s\+[a-zA-Z$_]\)\@!/
 
 syntax region pogoInterpolation start="#(" end=")" contained contains=TOP
 
