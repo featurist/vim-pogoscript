@@ -2,6 +2,7 @@ if exists("b:current_syntax")
     finish
 endif
 
+syntax match pogoTab /\t/
 syntax match pogoNumber /[0-9]\+\(\.[0-9]\+\)\?/
 syntax match pogoOperator /\(\s\|\i\|^\)\@<=[=.:#]\(\s\|\i\|$\)\@=/
 syntax match pogoBracket /@(\|@{\|#(\|[\[\](){}]/
@@ -15,10 +16,10 @@ syntax region pogoComment start="/\*" end="\*/"
 syntax region pogoString start="\"" end="\"" contains=pogoInterpolation
 syntax region pogoString start="'" end="'"
 
+highlight link pogoTab ErrorMsg
 highlight link pogoNumber Number
 highlight link pogoOperator Operator
-highlight link pogoBracket Macro
-highlight link pogoParens Macro
+highlight link pogoBracket Delimiter
 highlight link pogoString String
 highlight link pogoKeyword Function
 highlight link pogoComment Comment
