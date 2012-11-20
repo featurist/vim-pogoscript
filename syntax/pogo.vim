@@ -21,7 +21,7 @@ syntax region pogoParens start="(" end=")" transparent keepend extend
 syntax region pogoComment start="/\*" end="\*/"
 syntax region pogoString start="\"" end="\"" contains=pogoInterpolation
 syntax region pogoString start="'" end="'"
-syntax region pogoString start="r/" end="/[gim]\+"
+syntax region pogoString start="r/" end="/[gim]*"
 
 highlight link pogoTab ErrorMsg
 highlight link pogoNumber Number
