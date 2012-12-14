@@ -2,6 +2,7 @@ if exists("b:current_syntax")
     finish
 endif
 
+syntax match pogoAsync /[a-zA-Z$_ ]\+!\@=/
 syntax match pogoTab /\t/
 syntax match pogoNumber /[0-9]\+\(\.[0-9]\+\)\?/
 
@@ -27,6 +28,7 @@ highlight link pogoTab ErrorMsg
 highlight link pogoNumber Number
 highlight link pogoOperator Operator
 highlight link pogoBracket Delimiter
+highlight link pogoAsync Macro
 highlight link pogoString String
 highlight link pogoKeyword Function
 highlight link pogoComment Comment
