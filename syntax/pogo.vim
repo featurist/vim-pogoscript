@@ -5,7 +5,7 @@ endif
 syntax match pogoAsync /!/
 syntax match pogoFuture /?/
 syntax match pogoTab /\t/
-syntax match pogoNumber "\v[0-9]+(.[0-9]+)?"
+syntax match pogoNumber "\v[a-zA-Z]@<![0-9]+(.[0-9]+)?"
 
 syntax match pogoOperator "==\|!=\|<-\|=>\|<=\|>=\|<\|>"
 syntax match pogoOperator "\v[+-/*]"
