@@ -18,7 +18,7 @@ syntax match pogoComment /\/\/.*$/
 syntax match pogoKeyword /\([a-zA-Z$_]\s\+\)\@<!\<\(return\|self\|throw\|try\|catch\|finally\|if\|else\s\+if\|else\|while\|for\|new\|true\|false\|debugger\|continuation\)\>\(\s\+[a-zA-Z$_]\)\@!/
 
 syntax region pogoInterpolation start="#(" end=")" contained keepend extend contains=TOP
-syntax region pogoParens start="(" end=")" transparent extend
+syntax region pogoParens start="(" end=")" transparent 
 
 syntax region pogoComment start="/\*" end="\*/"
 syntax region pogoString start="'" end="'"
