@@ -5,7 +5,8 @@ endif
 syntax match pogoAsync /!/
 syntax match pogoFuture /?/
 syntax match pogoTab /\t/
-syntax match pogoNumber "\v[a-zA-Z]@<![0-9]+(.[0-9]+)?"
+syntax match pogoIdentifier "\v[$_a-zA-Z][$_a-zA-Z0-9]*"
+syntax match pogoNumber "\v[0-9]+(.[0-9]+)?"
 
 syntax match pogoOperator "==\|!=\|<-\|=>\|<=\|>=\|<\|>"
 syntax match pogoOperator "\v[+-/*]"
@@ -15,12 +16,12 @@ syntax match pogoOperator /@[a-zA-Z_$][a-zA-Z_$0-9]*/
 
 syntax match pogoEscape /\\./ contained
 syntax match pogoSingleQuoteEscape /''/ contained
-syntax match pogoBracket /@(\|@{\|#(\|[\[\](){}]/
+syntax match pogoBracket /@(\|@{\|[\[\]{}]/
 syntax match pogoComment /\/\/.*$/
-syntax match pogoKeyword /\([a-zA-Z$_]\s\+\)\@<!\<\(return\|self\|throw\|try\|catch\|finally\|if\|else\s\+if\|else\|while\|for\|new\|true\|false\|nil\|debugger\|continuation\)\>\(\s\+[a-zA-Z$_]\)\@!/
+syntax match pogoKeyword /\([a-zA-Z$_]\s\+\)\@<!\<\(return\|require\|module\|exports\|self\|throw\|try\|catch\|finally\|if\|else\s\+if\|else\|while\|for\|new\|true\|false\|nil\|debugger\|continuation\)\>\(\s\+[a-zA-Z$_]\)\@!/
 
-syntax region pogoInterpolation start="#(" end=")" contained keepend extend contains=TOP
-syntax region pogoParens start="(" end=")" transparent 
+syntax region pogoParens matchgroup=pogoBracket start="(" end=")" transparent contains=TOP
+syntax region pogoInterpolation matchgroup=pogoBracket start="#(" end=")" contained contains=TOP
 
 syntax region pogoComment start="/\*" end="\*/"
 syntax region pogoString matchgroup=pogoString start="'" end="'" contains=pogoSingleQuoteEscape
