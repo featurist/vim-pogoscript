@@ -2,7 +2,7 @@ if exists("b:current_syntax")
     finish
 endif
 
-syntax match pogoAsync /!/
+syntax match pogoAsync /[!^]/
 syntax match pogoFuture /?/
 syntax match pogoTab /\t/
 syntax match pogoIdentifier "\v[$_a-zA-Z][$_a-zA-Z0-9]*"
@@ -16,11 +16,12 @@ syntax match pogoOperator /@[a-zA-Z_$][a-zA-Z_$0-9]*/
 
 syntax match pogoEscape /\\./ contained
 syntax match pogoSingleQuoteEscape /''/ contained
-syntax match pogoBracket /@(\|@{\|[\[\]{}]/
+syntax match pogoBracket /@{\|[\[\]{}]/
 syntax match pogoComment /\/\/.*$/
 syntax match pogoKeyword /\([a-zA-Z$_]\s\+\)\@<!\<\(return\|require\|module\|exports\|self\|throw\|try\|catch\|finally\|if\|else\s\+if\|else\|while\|for\|new\|true\|false\|nil\|debugger\|continuation\)\>\(\s\+[a-zA-Z$_]\)\@!/
 
-syntax region pogoParens matchgroup=pogoBracket start="(" end=")" transparent contains=TOP
+syntax region pogoParens matchgroup=Type start="(" end=")" transparent contains=TOP
+syntax region pogoParams matchgroup=Type start="@(" end=")" transparent contains=TOP
 syntax region pogoInterpolation matchgroup=pogoBracket start="#(" end=")" contained contains=TOP
 
 syntax region pogoComment start="/\*" end="\*/"
