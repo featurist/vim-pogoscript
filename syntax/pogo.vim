@@ -19,6 +19,7 @@ syntax match pogoSingleQuoteEscape /''/ contained
 syntax match pogoBracket /@{\|[\[\]{}]/
 syntax match pogoComment /\/\/.*$/
 syntax match pogoKeyword /\([a-zA-Z$_]\s\+\)\@<!\<\(return\|require\|module\|exports\|self\|throw\|try\|catch\|finally\|if\|else\s\+if\|else\|while\|for\|new\|true\|false\|nil\|debugger\|continuation\)\>\(\s\+[a-zA-Z$_]\)\@!/
+syntax match pogoRegexElement /[+|*.?()]/ contained
 
 syntax region pogoParens matchgroup=Type start="(" end=")" transparent contains=TOP
 syntax region pogoParams matchgroup=Type start="@(" end=")" transparent contains=TOP
@@ -27,7 +28,7 @@ syntax region pogoInterpolation matchgroup=pogoBracket start="#(" end=")" contai
 syntax region pogoComment start="/\*" end="\*/"
 syntax region pogoString matchgroup=pogoString start="'" end="'" contains=pogoSingleQuoteEscape
 syntax region pogoString start="\"" end="\"" contains=pogoInterpolation,pogoEscape
-syntax region pogoString start="r/" end="/[gim]*" contains=pogoEscape
+syntax region pogoString start="r/" end="/[gim]*" contains=pogoRegexElement,pogoEscape
 
 highlight link pogoTab ErrorMsg
 highlight link pogoNumber Number
@@ -37,6 +38,7 @@ highlight link pogoAsync Delimiter
 highlight link pogoFuture Delimiter
 highlight link pogoString String
 highlight link pogoEscape Special
+highlight link pogoRegexElement Special
 highlight link pogoSingleQuoteEscape Special
 highlight link pogoKeyword Function
 highlight link pogoComment Comment
