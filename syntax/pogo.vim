@@ -33,11 +33,11 @@ syntax region pogoString matchgroup=pogoString start="'" end="'" contains=pogoSi
 syntax region pogoString start="\"" end="\"" contains=pogoInterpolation,pogoEscape
 syntax region pogoString start="r/" end="/[gim]*" contains=pogoRegexElement,pogoEscape
 
-highlight link pogoTab ErrorMsg
+highlight link pogoTab Error
 highlight link pogoNumber Number
 highlight link pogoOperator Operator
 highlight link pogoBracket Type
-highlight link pogoStrayBracket ErrorMsg
+highlight link pogoStrayBracket Error
 highlight link pogoAsync Delimiter
 highlight link pogoFuture Delimiter
 highlight link pogoString String
