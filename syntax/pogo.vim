@@ -18,7 +18,7 @@ syntax match pogoEscape /\\./ contained
 syntax match pogoSingleQuoteEscape /''/ contained
 syntax match pogoStrayBracket /[\])}]/
 syntax match pogoComment /\/\/.*$/
-syntax match pogoKeyword /\([a-zA-Z$_]\s\+\)\@<!\<\(return\|require\|module\|exports\|self\|throw\|try\|catch\|finally\|if\|else\s\+if\|else\|while\|for\|new\|true\|false\|nil\|debugger\|continuation\)\>\(\s\+[a-zA-Z$_]\)\@!/
+syntax match pogoKeyword /\([a-zA-Z$_]\s\+\)\@<!\<\(return\|require\|module\|exports\|self\|throw\|try\|catch\|finally\|if\|else\s\+if\|else\|while\|for\|new\|true\|false\|nil\|debugger\|promise\|prototype\|prototypeExtending\)\>\(\s\+[a-zA-Z$_]\)\@!/
 syntax match pogoRegexElement /[+|*.?()^$]/ contained
 
 syntax region pogoParens matchgroup=pogoBracket start="(" end=")" transparent contains=TOP
