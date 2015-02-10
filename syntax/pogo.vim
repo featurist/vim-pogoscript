@@ -3,7 +3,6 @@ if exists("b:current_syntax")
 endif
 
 syntax match pogoAsync /[!^]/
-syntax match pogoFuture /?/
 syntax match pogoTab /\t/
 syntax match pogoIdentifier "\v[$_a-zA-Z][$_a-zA-Z0-9]*"
 syntax match pogoNumber "\v[0-9]+(.[0-9]+)?"
@@ -38,8 +37,7 @@ highlight link pogoNumber Number
 highlight link pogoOperator Operator
 highlight link pogoBracket Type
 highlight link pogoStrayBracket Error
-highlight link pogoAsync Delimiter
-highlight link pogoFuture Delimiter
+highlight link pogoAsync Operator
 highlight link pogoString String
 highlight link pogoEscape Special
 highlight link pogoRegexElement Special
